@@ -3,7 +3,7 @@
 ``` shell
 # ~/.bash_profile
 ecco(){
-  echo -e "\033[$2m$1\033[0m"
+  echo -e "\033[$1m${@:2}\033[0m"
 }
 ```
 
