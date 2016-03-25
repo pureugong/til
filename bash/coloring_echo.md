@@ -8,7 +8,8 @@ ecco(){
 ```
 
 ```shell
-
-$ ecco red 31
-
+# how to use it!!
+$ ecco 31 some text here
 ```
+
+[Tip Colors and Formatting](http://misc.flogisoft.com/bash/tip_colors_and_formatting)
