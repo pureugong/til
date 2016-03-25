@@ -1,6 +1,6 @@
 ## arguments
 
-### get the first argument
+### 1. get the first argument
 
 ```shell
 foo(){
@@ -8,7 +8,7 @@ foo(){
 }
 ```
 
-### get the last argument
+### 2. get the last argument
 
 ```shell
 foo(){
@@ -16,7 +16,7 @@ foo(){
 }
 ```
 
-### get the arguments except the first one
+### 3. get the arguments except the first one
 
 ```shell
 foo(){
@@ -24,7 +24,7 @@ foo(){
 }
 ```
 
-### get the arguments except the last one
+### 4. get the arguments except the last one
 
 ```shell
 foo(){
