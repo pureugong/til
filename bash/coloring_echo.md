@@ -1,4 +1,4 @@
-## Coloring echo
+## coloring echo
 
 ### 1. New function
 
@@ -14,7 +14,7 @@ ecco(){
 
 - the first arg is color code
 - the others args are text
-- [Tip Colors](http://misc.flogisoft.com/bash/tip_colors_and_formatting)
+- [colors code](http://misc.flogisoft.com/bash/tip_colors_and_formatting)
 
 ```shell
 # coloring red is 31
