@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- <project name="POC" default="test" basedir="."> -->
+<project name="test" default="file:copy" basedir=".">
+
+  <!-- ant 추가 라이브러리 -->
+  <!-- http://ant-contrib.sourceforge.net/tasks/index.html -->
+  <!-- <taskdef resource="net/sf/antcontrib/antcontrib.properties"> -->
+  <taskdef resource="net/sf/antcontrib/antlib.xml">
+    <classpath>
+      <pathelement location="ant-lib/ant-contrib-1.0b3.jar"/>
+    </classpath>
+  </taskdef>
+
+  <!-- 파일로드 -->
+  <!-- <loadfile property="file" srcfile="filelist"/> -->
+
+  <!-- read line -->
+  <target name="compile">
+    <for param="line" list="${file}" delimiter="${line.separator}">
+      <sequential>
+        <echo>@{line}</echo>
+      </sequential>
+    </for>
+  </target>
+
+  <!-- change -->
+  <!-- http://ant-contrib.sourceforge.net/tasks/tasks/propertyregex.html -->
+  <target name="file:copy">
+    <!-- 파일리스트 java > class 변경 -->
+    <replaceregexp byline="true">
+      <regexp pattern=".java"/>
+      <substitution expression=".class"/>
+      <fileset dir=".">
+        <include name="filelist"/>
+      </fileset>
+    </replaceregexp>
+    <!-- 파일리스트 로드 -->
+    <loadfile property="file" srcfile="filelist"/>
+
+    <!-- 파일 리드 -->
+    <for param="line" list="${file}" delimiter="${line.separator}">
+      <sequential>
+        <!-- 복사 -->
+        <copy todir="result"><fileset dir="project"><include name="@{line}"/></fileset></copy>
+      </sequential>
+    </for>
+
+  </target>
+</project>
